@@ -9306,12 +9306,16 @@ const core = __importStar(__nccwpck_require__(2810));
 const rest_1 = __nccwpck_require__(3676);
 (() => __awaiter(void 0, void 0, void 0, function* () {
     try {
+        const repoName = core.getInput('repo-name');
+        const repoPrivate = core.getInput('repo-private') === 'true';
         const octokit = new rest_1.Octokit({
             auth: process.env.GITHUB_TOKEN
         });
-        const name = core.getInput('name');
         yield octokit.rest.repos.createForAuthenticatedUser({
-            name: name,
+            name: repoName,
+            description: `${repoName} Repo`,
+            private: repoPrivate,
+            auto_init: true
         });
     }
     catch (err) {
