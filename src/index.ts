@@ -10,7 +10,7 @@ import { Octokit } from '@octokit/rest';
     const name: string = core.getInput('name');
 
     await octokit.rest.repos.createForAuthenticatedUser({
-      name,
+      name: name,
     });
   } catch (err: any) {
     core.setFailed(err.message);

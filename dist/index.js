@@ -9311,7 +9311,7 @@ const rest_1 = __nccwpck_require__(3676);
         });
         const name = core.getInput('name');
         yield octokit.rest.repos.createForAuthenticatedUser({
-            name,
+            name: name,
         });
     }
     catch (err) {
