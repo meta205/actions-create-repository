@@ -1,0 +1,14 @@
+name: 'GitHub Action for creating a GitHub Repository'
+description: 'This is a GitHub Action for creating a GitHub Repository.'
+
+branding:
+  icon: plus-square
+  color: 'blue'
+
+inputs:
+  name:
+    description: 'The name of the repository'
+    required: true
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
